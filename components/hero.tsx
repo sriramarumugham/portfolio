@@ -101,7 +101,7 @@ export function Hero() {
         >
           <div className="relative w-64 h-64 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/20">
             <img
-              src="/avatar.png"
+              src="/portfolio/avatar.png"
               alt="Sreeram"
               className="w-full h-full object-cover object-center"
             />
