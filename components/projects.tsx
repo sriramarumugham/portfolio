@@ -1,7 +1,10 @@
+"use client"
+
 import { Github, ExternalLink } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { motion } from "framer-motion"
 
 const projects = [
   {
@@ -12,7 +15,7 @@ const projects = [
     demo: "https://demo.example.com"
   },
   {
-    title: "Task Management App",
+    title: "Task Management App", 
     description: "Collaborative task management application with real-time updates, team workspaces, and productivity analytics.",
     stack: ["React", "Node.js", "Socket.io", "MongoDB", "Redis"],
     github: "https://github.com/yourusername/taskmanager",
@@ -49,34 +52,70 @@ const projects = [
 ]
 
 export function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6
+      }
+    }
+  }
+
   return (
     <section id="projects" className="py-12 md:py-16">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Projects</h2>
-      <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <motion.h2 
+        className="text-2xl md:text-3xl font-bold mb-6 md:mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Projects
+      </motion.h2>
+      <motion.div 
+        className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {projects.map((project, index) => (
-          <Card key={index} className="flex flex-col">
+          <motion.div key={index} variants={itemVariants}>
+            <Card className="flex flex-col overflow-hidden group hover:shadow-lg transition-all duration-300 h-full">
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
+              <CardTitle className="text-lg">{project.title}</CardTitle>
+              <CardDescription className="text-sm line-clamp-2">{project.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex-1">
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
-                  <Badge key={tech} variant="secondary">
+                  <Badge key={tech} variant="secondary" className="text-xs">
                     {tech}
                   </Badge>
                 ))}
               </div>
             </CardContent>
-            <CardFooter className="gap-2">
-              <Button asChild variant="outline" size="sm">
+            <CardFooter className="gap-2 pt-2">
+              <Button asChild variant="outline" size="sm" className="flex-1">
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" />
                   Code
                 </a>
               </Button>
               {project.demo && (
-                <Button asChild variant="outline" size="sm">
+                <Button asChild variant="outline" size="sm" className="flex-1">
                   <a href={project.demo} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo
@@ -85,8 +124,9 @@ export function Projects() {
               )}
             </CardFooter>
           </Card>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

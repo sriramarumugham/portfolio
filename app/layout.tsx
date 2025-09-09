@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Architects_Daughter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const architectsDaughter = Architects_Daughter({ 
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-architects-daughter"
+});
 
 export const metadata: Metadata = {
   title: "Sreeram's Portfolio",
@@ -17,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={architectsDaughter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

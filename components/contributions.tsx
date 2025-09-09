@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function Contributions() {
-  const githubUsername = "yourusername";
-  const leetcodeUsername = "yourusername";
+  const githubUsername = "sriramarumugham";
+  const leetcodeUsername = "sriram_arumugam";
 
   return (
     <section id="contributions" className="py-12 md:py-16">
@@ -19,14 +19,14 @@ export function Contributions() {
           <CardContent>
             <div className="flex justify-center overflow-hidden">
               <img
-                src={`https://github-readme-streak-stats.vercel.app/?user=${githubUsername}&theme=dark&hide_border=true`}
+                src={`https://streak-stats.demolab.com/?user=${githubUsername}&theme=dark&hide_border=true`}
                 alt="GitHub Streak Stats"
-                className="rounded-lg w-full h-auto dark:block hidden"
+                className="rounded-lg max-w-full w-auto h-auto dark:block hidden"
               />
               <img
-                src={`https://github-readme-streak-stats.vercel.app/?user=${githubUsername}&theme=light&hide_border=true`}
+                src={`https://streak-stats.demolab.com/?user=${githubUsername}&theme=default&hide_border=true`}
                 alt="GitHub Streak Stats"
-                className="rounded-lg w-full h-auto dark:hidden block"
+                className="rounded-lg max-w-full w-auto h-auto dark:hidden block"
               />
             </div>
           </CardContent>
@@ -43,12 +43,12 @@ export function Contributions() {
               <img
                 src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?theme=dark&font=Nunito&ext=contest`}
                 alt="LeetCode Stats"
-                className="rounded-lg w-full h-auto dark:block hidden"
+                className="rounded-lg max-w-full w-auto h-auto dark:block hidden"
               />
               <img
                 src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?theme=light&font=Nunito&ext=contest`}
                 alt="LeetCode Stats"
-                className="rounded-lg w-full h-auto dark:hidden block"
+                className="rounded-lg max-w-full w-auto h-auto dark:hidden block"
               />
             </div>
           </CardContent>
@@ -65,12 +65,12 @@ export function Contributions() {
               <img
                 src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=dark&hide_border=true&count_private=true`}
                 alt="GitHub Stats"
-                className="rounded-lg w-full h-auto dark:block hidden"
+                className="rounded-lg max-w-full w-auto h-auto dark:block hidden"
               />
               <img
                 src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=light&hide_border=true&count_private=true`}
                 alt="GitHub Stats"
-                className="rounded-lg w-full h-auto dark:hidden block"
+                className="rounded-lg max-w-full w-auto h-auto dark:hidden block"
               />
             </div>
           </CardContent>

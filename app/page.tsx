@@ -2,7 +2,6 @@ import { Hero } from "@/components/hero"
 import { Projects } from "@/components/projects"
 import { Skills } from "@/components/skills"
 import { Contributions } from "@/components/contributions"
-import { Resume } from "@/components/resume"
 import { Navbar } from "@/components/navbar"
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
         <Projects />
         <Skills />
         <Contributions />
-        <Resume />
       </div>
     </main>
   )
