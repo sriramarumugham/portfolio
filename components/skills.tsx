@@ -22,13 +22,13 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16">
-      <h2 className="text-3xl font-bold mb-8">Skills</h2>
-      <div className="grid gap-6 md:grid-cols-2">
+    <section id="skills" className="py-12 md:py-16">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Skills</h2>
+      <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         {skillCategories.map((category, index) => (
           <Card key={index}>
             <CardHeader>
-              <CardTitle className="text-xl">{category.title}</CardTitle>
+              <CardTitle className="text-lg md:text-xl">{category.title}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">

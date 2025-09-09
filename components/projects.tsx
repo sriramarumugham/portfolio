@@ -50,9 +50,9 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-16">
-      <h2 className="text-3xl font-bold mb-8">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <section id="projects" className="py-12 md:py-16">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Projects</h2>
+      <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <Card key={index} className="flex flex-col">
             <CardHeader>

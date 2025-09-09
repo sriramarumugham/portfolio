@@ -4,21 +4,21 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function Hero() {
   return (
-    <section id="home" className="py-20">
-      <div className="flex flex-col md:flex-row items-center gap-8">
-        <div className="flex-1 space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold">
+    <section id="home" className="py-12 md:py-20">
+      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+        <div className="flex-1 space-y-4 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
             Hi, I&apos;m <span className="text-primary">Sreeram</span>
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg sm:text-xl text-muted-foreground">
             Full Stack Developer | Problem Solver | Tech Enthusiast
           </p>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-base sm:text-lg text-muted-foreground">
             Passionate about building scalable web applications and solving complex problems. 
             Experienced in TypeScript, Node.js, React, and cloud technologies.
           </p>
           
-          <div className="flex gap-4 pt-4">
+          <div className="flex gap-4 pt-4 justify-center md:justify-start">
             <Button asChild variant="outline" size="icon">
               <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
@@ -38,9 +38,9 @@ export function Hero() {
         </div>
         
         <div className="flex-shrink-0">
-          <Avatar className="w-48 h-48 md:w-64 md:h-64">
+          <Avatar className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64">
             <AvatarImage src="/avatar.jpg" alt="Sreeram" />
-            <AvatarFallback className="text-6xl">S</AvatarFallback>
+            <AvatarFallback className="text-3xl sm:text-6xl">S</AvatarFallback>
           </Avatar>
         </div>
       </div>

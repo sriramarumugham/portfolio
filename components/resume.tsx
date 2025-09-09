@@ -4,14 +4,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function Resume() {
   return (
-    <section id="resume" className="py-16">
-      <h2 className="text-3xl font-bold mb-8">Resume</h2>
-      <Card className="max-w-md mx-auto">
+    <section id="resume" className="py-12 md:py-16">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Resume</h2>
+      <Card className="max-w-sm sm:max-w-md mx-auto">
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
             <FileText className="h-10 w-10 text-primary" />
           </div>
-          <CardTitle>Download Resume</CardTitle>
+          <CardTitle className="text-lg md:text-xl">Download Resume</CardTitle>
           <CardDescription>
             Get my latest resume with detailed experience, skills, and achievements.
           </CardDescription>
