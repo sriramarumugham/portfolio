@@ -1,33 +1,29 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { ThemeToggle } from "@/components/theme-toggle"
+import * as React from "react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const navItems = [
     { href: "#home", label: "Home" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
+    { href: "#experience", label: "Experience" },
     { href: "#contributions", label: "Contributions" },
-  ]
+    { href: "#contact", label: "Contact" },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center px-4">
-        <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold text-xl">Sreeram</span>
-          </Link>
-        </div>
-        
+      <div className="container flex h-16 items-center px-4 m-auto">
         <div className="hidden md:flex md:flex-1">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav className="flex items-center space-x-6 text-sm">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -39,10 +35,10 @@ export function Navbar() {
             ))}
           </nav>
         </div>
-        
+
         <div className="flex flex-1 items-center justify-end space-x-2">
           <ThemeToggle />
-          
+
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="outline" size="icon">
@@ -51,13 +47,14 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <nav className="flex flex-col space-y-4 mt-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium transition-colors hover:text-foreground/80 text-foreground/60"
+                    className="text-lg transition-colors hover:text-foreground/80 text-foreground/60"
                   >
                     {item.label}
                   </Link>
@@ -68,5 +65,5 @@ export function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

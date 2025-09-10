@@ -8,14 +8,31 @@ export function Hero() {
   return (
     <section id="home" className="py-12 md:py-20">
       <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+        {/* Photo first on mobile, right side on desktop */}
         <motion.div
-          className="flex-1 space-y-4 text-center md:text-left"
+          className="flex-shrink-0 order-1 md:order-2"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+        >
+          <div className="relative w-64 h-64 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/20">
+            <img
+              src="/portfolio/avatar.png"
+              alt="Sreeram"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </motion.div>
+
+        {/* Text second on mobile, left side on desktop */}
+        <motion.div
+          className="flex-1 space-y-4 text-center md:text-left order-2 md:order-1"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -51,7 +68,7 @@ export function Hero() {
               href="https://drive.google.com/your-resume-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary underline decoration-2 underline-offset-4 hover:decoration-4 transition-all font-semibold text-lg"
+              className="text-primary underline decoration-2 underline-offset-4 hover:decoration-4 transition-all text-lg"
             >
               View my resume
             </a>
@@ -91,21 +108,6 @@ export function Hero() {
               </a>
             </Button>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="flex-shrink-0"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-        >
-          <div className="relative w-64 h-64 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/20">
-            <img
-              src="/portfolio/avatar.png"
-              alt="Sreeram"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
         </motion.div>
       </div>
     </section>

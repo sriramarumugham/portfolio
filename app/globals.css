@@ -1,112 +1,105 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Charter:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.9821 0 0);
-  --foreground: oklch(0.3485 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.3485 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.3485 0 0);
-  --primary: oklch(0.4891 0 0);
-  --primary-foreground: oklch(0.9551 0 0);
-  --secondary: oklch(0.9006 0 0);
-  --secondary-foreground: oklch(0.3485 0 0);
-  --muted: oklch(0.9158 0 0);
-  --muted-foreground: oklch(0.4313 0 0);
-  --accent: oklch(0.9354 0.0456 94.8549);
-  --accent-foreground: oklch(0.4015 0.0436 37.9587);
-  --destructive: oklch(0.6627 0.0978 20.0041);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.5538 0.0025 17.232);
-  --input: oklch(1 0 0);
-  --ring: oklch(0.7058 0 0);
-  --chart-1: oklch(0.3211 0 0);
-  --chart-2: oklch(0.4495 0 0);
-  --chart-3: oklch(0.5693 0 0);
-  --chart-4: oklch(0.683 0 0);
-  --chart-5: oklch(0.7921 0 0);
-  --sidebar: oklch(0.9551 0 0);
-  --sidebar-foreground: oklch(0.3485 0 0);
-  --sidebar-primary: oklch(0.4891 0 0);
-  --sidebar-primary-foreground: oklch(0.9551 0 0);
-  --sidebar-accent: oklch(0.9354 0.0456 94.8549);
-  --sidebar-accent-foreground: oklch(0.4015 0.0436 37.9587);
-  --sidebar-border: oklch(0.8078 0 0);
-  --sidebar-ring: oklch(0.7058 0 0);
-  --font-sans: Architects Daughter, sans-serif;
-  --font-serif: "Times New Roman", Times, serif;
-  --font-mono: "Courier New", Courier, monospace;
-  --radius: 0.625rem;
-  --shadow-2xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
-  --shadow-xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
-  --shadow-sm: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow-md: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 2px 4px -1px hsl(0 0% 0% / 0.03);
-  --shadow-lg: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 4px 6px -1px hsl(0 0% 0% / 0.03);
-  --shadow-xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 8px 10px -1px hsl(0 0% 0% / 0.03);
-  --shadow-2xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.07);
-  --tracking-normal: 0.5px;
+  /* Medium-style Light Mode Colors */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 15%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 15%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 15%);
+  --primary: hsl(0 0% 15%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(0 0% 96%);
+  --secondary-foreground: hsl(0 0% 15%);
+  --muted: hsl(0 0% 96%);
+  --muted-foreground: hsl(0 0% 46%);
+  --accent: hsl(0 0% 4%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(0 0% 88%);
+  --input: hsl(0 0% 100%);
+  --ring: hsl(0 0% 15%);
+  
+  /* Chart colors */
+  --chart-1: hsl(140 68% 22%);
+  --chart-2: hsl(173 58% 39%);
+  --chart-3: hsl(197 37% 24%);
+  --chart-4: hsl(43 74% 66%);
+  --chart-5: hsl(27 87% 67%);
+  
+  /* Sidebar */
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(0 0% 15%);
+  --sidebar-primary: hsl(140 68% 22%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(140 68% 95%);
+  --sidebar-accent-foreground: hsl(140 68% 22%);
+  --sidebar-border: hsl(0 0% 92%);
+  --sidebar-ring: hsl(140 68% 22%);
+  
+  /* Medium-style Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-serif: 'Charter', Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Inconsolata', 'Fira Code', monospace;
+  
+  /* Spacing and Sizing */
+  --radius: 0.25rem;
+  --shadow-2xs: 0 1px 2px 0 rgb(0 0 0 / 0.02);
+  --shadow-xs: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tracking-normal: -0.003em;
   --spacing: 0.25rem;
 }
 
 .dark {
-  --background: oklch(0.2891 0 0);
-  --foreground: oklch(0.8945 0 0);
-  --card: oklch(0.3211 0 0);
-  --card-foreground: oklch(0.8945 0 0);
-  --popover: oklch(0.3211 0 0);
-  --popover-foreground: oklch(0.8945 0 0);
-  --primary: oklch(0.7572 0 0);
-  --primary-foreground: oklch(0.2891 0 0);
-  --secondary: oklch(0.4676 0 0);
-  --secondary-foreground: oklch(0.8078 0 0);
-  --muted: oklch(0.3904 0 0);
-  --muted-foreground: oklch(0.7058 0 0);
-  --accent: oklch(0.9067 0 0);
-  --accent-foreground: oklch(0.3211 0 0);
-  --destructive: oklch(0.7915 0.0491 18.241);
-  --destructive-foreground: oklch(0.2891 0 0);
-  --border: oklch(0.4276 0 0);
-  --input: oklch(0.3211 0 0);
-  --ring: oklch(0.8078 0 0);
-  --chart-1: oklch(0.9521 0 0);
-  --chart-2: oklch(0.8576 0 0);
-  --chart-3: oklch(0.7572 0 0);
-  --chart-4: oklch(0.6534 0 0);
-  --chart-5: oklch(0.5452 0 0);
-  --sidebar: oklch(0.2478 0 0);
-  --sidebar-foreground: oklch(0.8945 0 0);
-  --sidebar-primary: oklch(0.7572 0 0);
-  --sidebar-primary-foreground: oklch(0.2478 0 0);
-  --sidebar-accent: oklch(0.9067 0 0);
-  --sidebar-accent-foreground: oklch(0.3211 0 0);
-  --sidebar-border: oklch(0.4276 0 0);
-  --sidebar-ring: oklch(0.8078 0 0);
-  --font-sans: Architects Daughter, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: "Fira Code", "Courier New", monospace;
-  --radius: 0.625rem;
-  --shadow-2xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
-  --shadow-xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
-  --shadow-sm: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow-md: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 2px 4px -1px hsl(0 0% 0% / 0.03);
-  --shadow-lg: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 4px 6px -1px hsl(0 0% 0% / 0.03);
-  --shadow-xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.03),
-    1px 8px 10px -1px hsl(0 0% 0% / 0.03);
-  --shadow-2xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.07);
+  /* Medium-style Dark Mode Colors */
+  --background: hsl(0 0% 7%);
+  --foreground: hsl(0 0% 95%);
+  --card: hsl(0 0% 10%);
+  --card-foreground: hsl(0 0% 95%);
+  --popover: hsl(0 0% 10%);
+  --popover-foreground: hsl(0 0% 95%);
+  --primary: hsl(0 0% 95%);
+  --primary-foreground: hsl(0 0% 7%);
+  --secondary: hsl(0 0% 15%);
+  --secondary-foreground: hsl(0 0% 90%);
+  --muted: hsl(0 0% 15%);
+  --muted-foreground: hsl(0 0% 60%);
+  --accent: hsl(0 0% 95%);
+  --accent-foreground: hsl(0 0% 7%);
+  --destructive: hsl(0 62% 50%);
+  --destructive-foreground: hsl(0 0% 95%);
+  --border: hsl(0 0% 20%);
+  --input: hsl(0 0% 10%);
+  --ring: hsl(0 0% 95%);
+  
+  /* Chart colors */
+  --chart-1: hsl(140 48% 55%);
+  --chart-2: hsl(173 48% 49%);
+  --chart-3: hsl(197 37% 44%);
+  --chart-4: hsl(43 64% 56%);
+  --chart-5: hsl(27 77% 57%);
+  
+  /* Sidebar */
+  --sidebar: hsl(0 0% 7%);
+  --sidebar-foreground: hsl(0 0% 95%);
+  --sidebar-primary: hsl(140 48% 55%);
+  --sidebar-primary-foreground: hsl(0 0% 7%);
+  --sidebar-accent: hsl(140 48% 20%);
+  --sidebar-accent-foreground: hsl(140 48% 55%);
+  --sidebar-border: hsl(0 0% 20%);
+  --sidebar-ring: hsl(140 48% 55%);
 }
 
 @theme inline {
@@ -169,15 +162,272 @@
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
-body {
-  letter-spacing: var(--tracking-normal);
+/* Medium-style Typography and Reading Experience */
+* {
+  font-family: var(--font-sans) !important;
 }
+
+body {
+  font-family: var(--font-sans) !important;
+  letter-spacing: var(--tracking-normal);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Medium-style Headings - Applied automatically */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+}
+
+h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+}
+
+h2 {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+}
+
+h3 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+}
+
+h4 {
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* READING CONTENT uses serif - Override the universal sans-serif */
+p:not([class*="card"] p):not(button p):not(nav p),
+li:not([class*="card"] li):not(button li):not(nav li),
+.experience-description,
+.contact-description {
+  font-family: var(--font-serif) !important;
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: -0.003em;
+  color: var(--foreground);
+}
+
+/* Article/Blog content gets larger serif text */
+article p,
+article li,
+.prose p,
+.prose li {
+  font-family: var(--font-serif) !important;
+  font-size: 1.125rem;
+}
+
+/* Blockquotes */
+blockquote {
+  font-family: var(--font-serif) !important;
+}
+
+/* Code Blocks */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background-color: var(--muted);
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Medium-style Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+a:hover {
+  color: var(--foreground);
+}
+
+/* Important links (like resume) always underlined - Medium style */
+a[href*="resume"],
+a[href*="cv"],
+.resume-link {
+  text-decoration: underline !important;
+  text-decoration-color: var(--foreground) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.2em !important;
+  color: var(--foreground) !important;
+}
+
+a[href*="resume"]:hover,
+a[href*="cv"]:hover,
+.resume-link:hover {
+  text-decoration-thickness: 2px !important;
+}
+
+/* Social links and external links */
+a[href^="http"], 
+a[href^="mailto:"],
+a[href^="tel:"] {
+  color: var(--muted-foreground);
+  text-decoration: none;
+}
+
+a[href^="http"]:hover, 
+a[href^="mailto:"]:hover,
+a[href^="tel:"]:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: var(--foreground);
+}
+
+/* Selection - Medium style */
+::selection {
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+
+.dark ::selection {
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-    letter-spacing: var(--tracking-normal);
+  }
+  
+  /* UI Elements use Sans-serif */
+  button, input, select, textarea, label {
+    font-family: var(--font-sans) !important;
+  }
+  
+  /* ALL UI elements use Sans-serif - Force override everything */
+  [class*="card"] *,
+  [class*="badge"] *,
+  [class*="button"] *,
+  [class*="dropdown"] *,
+  [class*="menu"] *,
+  nav *,
+  .navbar *,
+  button *,
+  [role="menuitem"],
+  [role="menuitem"] *,
+  [data-radix-collection-item],
+  [data-radix-collection-item] * {
+    font-family: var(--font-sans) !important;
+  }
+  
+  /* Achievement lists and descriptions in cards */
+  [class*="card"] p,
+  [class*="card"] li,
+  .text-muted-foreground {
+    font-family: var(--font-sans) !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Resume link and other inline links */
+  a {
+    font-family: inherit !important;
+  }
+  
+  /* Medium-style Button Styling - Apply to ALL buttons */
+  button, 
+  [role="button"],
+  .btn,
+  a[class*="button"] {
+    transition: all 0.15s ease !important;
+    border-radius: 2px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    text-decoration: none !important;
+  }
+  
+  /* Target default/primary buttons - Medium style primary */
+  button[data-slot="button"]:not([class*="outline"]):not([class*="ghost"]),
+  button[data-slot="button"]:not([class*="outline"]):not([class*="ghost"]) *,
+  .btn-primary,
+  .btn-primary * {
+    background-color: var(--foreground) !important;
+    color: var(--background) !important;
+    border: 1px solid var(--foreground) !important;
+  }
+  
+  button[data-slot="button"]:not([class*="outline"]):not([class*="ghost"]):hover,
+  button[data-slot="button"]:not([class*="outline"]):not([class*="ghost"]):hover *,
+  .btn-primary:hover,
+  .btn-primary:hover * {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+    border: 1px solid var(--foreground) !important;
+  }
+  
+  
+  /* Ghost/Secondary buttons - Medium style */
+  button[data-variant="ghost"],
+  button[data-variant="secondary"],
+  .ghost,
+  .secondary {
+    background-color: transparent !important;
+    color: var(--muted-foreground) !important;
+    border: 1px solid transparent !important;
+  }
+  
+  button[data-variant="ghost"]:hover,
+  button[data-variant="secondary"]:hover,
+  .ghost:hover,
+  .secondary:hover {
+    background-color: var(--muted) !important;
+    color: var(--foreground) !important;
+    border: 1px solid var(--border) !important;
+  }
+  
+  /* Icon buttons and theme toggle */
+  button[data-variant="outline"][class*="size-icon"],
+  .theme-toggle,
+  button:has(svg:only-child) {
+    background-color: transparent !important;
+    color: var(--muted-foreground) !important;
+    border: 1px solid var(--border) !important;
+    padding: 8px !important;
+  }
+  
+  button[data-variant="outline"][class*="size-icon"]:hover,
+  .theme-toggle:hover,
+  button:has(svg:only-child):hover {
+    background-color: var(--muted) !important;
+    color: var(--foreground) !important;
+    border: 1px solid var(--foreground) !important;
+  }
+  
+  /* Medium-style Focus States - subtle */
+  :focus-visible {
+    outline: 1px solid var(--muted-foreground);
+    outline-offset: 1px;
+    box-shadow: none;
+  }
+  
+  button:focus-visible,
+  a:focus-visible {
+    outline: 1px solid var(--foreground);
+    outline-offset: 2px;
   }
 }

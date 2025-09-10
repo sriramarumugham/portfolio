@@ -1,13 +1,15 @@
 "use client"
 
-import { Github, ExternalLink } from "lucide-react"
+import { Github, ExternalLink, ArrowRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 const projects = [
   {
+    slug: "ecommerce-platform",
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
     stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
@@ -15,6 +17,7 @@ const projects = [
     demo: "https://demo.example.com"
   },
   {
+    slug: "task-management",
     title: "Task Management App", 
     description: "Collaborative task management application with real-time updates, team workspaces, and productivity analytics.",
     stack: ["React", "Node.js", "Socket.io", "MongoDB", "Redis"],
@@ -22,6 +25,7 @@ const projects = [
     demo: "https://taskapp.example.com"
   },
   {
+    slug: "ai-assistant",
     title: "AI Chat Assistant",
     description: "Intelligent chat assistant powered by OpenAI API with context awareness and multi-language support.",
     stack: ["TypeScript", "Fastify", "OpenAI", "Redis", "Docker"],
@@ -29,6 +33,7 @@ const projects = [
     demo: null
   },
   {
+    slug: "weather-dashboard",
     title: "Weather Dashboard",
     description: "Real-time weather monitoring dashboard with location-based forecasts and historical data visualization.",
     stack: ["Vue.js", "Express", "Chart.js", "Weather API"],
@@ -36,6 +41,7 @@ const projects = [
     demo: "https://weather.example.com"
   },
   {
+    slug: "blog-platform",
     title: "Blog Platform",
     description: "Modern blogging platform with markdown support, SEO optimization, and content management system.",
     stack: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
@@ -43,6 +49,7 @@ const projects = [
     demo: "https://blog.example.com"
   },
   {
+    slug: "portfolio-website",
     title: "Portfolio Website",
     description: "Personal portfolio website showcasing projects, skills, and achievements with a clean, responsive design.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
@@ -76,7 +83,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-12 md:py-16">
       <motion.h2 
-        className="text-2xl md:text-3xl font-bold mb-6 md:mb-8"
+        className="text-2xl md:text-3xl mb-6 md:mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -107,21 +114,39 @@ export function Projects() {
                 ))}
               </div>
             </CardContent>
-            <CardFooter className="gap-2 pt-2">
-              <Button asChild variant="outline" size="sm" className="flex-1">
-                <a href={project.github} target="_blank" rel="noopener noreferrer">
+            <CardFooter className="flex flex-col gap-2 pt-2">
+              <Link href={`/projects/${project.slug}`} className="w-full">
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className="w-full"
+                >
+                  View Details
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <div className="flex gap-2 w-full">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex-1"
+                  onClick={() => window.open(project.github, '_blank')}
+                >
                   <Github className="mr-2 h-4 w-4" />
                   Code
-                </a>
-              </Button>
-              {project.demo && (
-                <Button asChild variant="outline" size="sm" className="flex-1">
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                </Button>
+                {project.demo && (
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open(project.demo, '_blank')}
+                  >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo
-                  </a>
-                </Button>
-              )}
+                  </Button>
+                )}
+              </div>
             </CardFooter>
           </Card>
           </motion.div>
