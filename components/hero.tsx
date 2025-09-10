@@ -3,6 +3,7 @@
 import { Github, Linkedin, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -16,10 +17,13 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <div className="relative w-64 h-64 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/20">
-            <img
+            <Image
               src="/portfolio/avatar.png"
               alt="Sreeram"
+              width={256}
+              height={256}
               className="w-full h-full object-cover object-center"
+              priority
             />
           </div>
         </motion.div>
