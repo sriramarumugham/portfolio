@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 
 export function Contributions() {
   const githubUsername = "sriramarumugham";
@@ -18,15 +19,21 @@ export function Contributions() {
           </CardHeader>
           <CardContent>
             <div className="flex justify-center overflow-hidden">
-              <img
+              <Image
                 src={`https://streak-stats.demolab.com/?user=${githubUsername}&theme=dark&hide_border=true`}
                 alt="GitHub Streak Stats"
+                width={400}
+                height={200}
                 className="rounded-lg max-w-full w-auto h-auto dark:block hidden"
+                unoptimized
               />
-              <img
+              <Image
                 src={`https://streak-stats.demolab.com/?user=${githubUsername}&theme=default&hide_border=true`}
                 alt="GitHub Streak Stats"
+                width={400}
+                height={200}
                 className="rounded-lg max-w-full w-auto h-auto dark:hidden block"
+                unoptimized
               />
             </div>
           </CardContent>
