@@ -7,11 +7,11 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section id="home" className="py-12 md:py-20">
+    <section id="home" className="py-20 md:py-20">
       <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
         {/* Photo first on mobile, right side on desktop */}
         <motion.div
-          className="flex-shrink-0 order-1 md:order-2"
+          className="flex-shrink-0 order-1 md:order-2 mt-8 md:mt-0"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}

@@ -4,7 +4,12 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
@@ -46,15 +51,15 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <nav className="flex flex-col space-y-4 mt-8">
+            <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <nav className="flex flex-col space-y-1 mt-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg transition-colors hover:text-foreground/80 text-foreground/60"
+                    className="text-base py-3 px-4 rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     {item.label}
                   </Link>

@@ -7,7 +7,7 @@ export function Contributions() {
 
   return (
     <section id="contributions" className="py-12 md:py-16">
-      <h2 className="text-2xl md:text-3xl  mb-6 md:mb-8">Contributions</h2>
+      <h2 className="text-2xl md:text-3xl mb-6 md:mb-8 text-center md:text-left">Contributions</h2>
       <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>

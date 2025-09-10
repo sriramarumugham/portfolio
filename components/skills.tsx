@@ -27,7 +27,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-12 md:py-16">
       <motion.h2 
-        className="text-2xl md:text-3xl  mb-6 md:mb-8"
+        className="text-2xl md:text-3xl mb-6 md:mb-8 text-center md:text-left"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
