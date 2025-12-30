@@ -1,147 +1,135 @@
-"use client"
+"use client";
 
-import { Calendar, MapPin, Briefcase } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { motion } from "framer-motion"
+import { Calendar, MapPin } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 const experiences = [
   {
-    company: "Tech Innovations Inc.",
-    position: "Senior Full Stack Developer",
-    location: "San Francisco, CA",
-    period: "Jan 2022 - Present",
-    description: "Leading development of enterprise-scale web applications using React, Node.js, and cloud technologies. Mentoring junior developers and architecting scalable solutions.",
-    achievements: [
-      "Reduced application load time by 40% through optimization",
-      "Led team of 5 developers on critical projects",
-      "Implemented CI/CD pipeline reducing deployment time by 60%",
-      "Architected microservices handling 1M+ requests daily"
+    company: "Neokred",
+    position: "SDE 2",
+    location: "Bengaluru, Karnataka, India",
+    period: "Apr 2024 - Present",
+    type: "Full-time · On-site",
+    description:
+      "Contributed in development of Collectbot, a high-volume payment processing platform handling payin-payout transactions across multiple Indian banks.",
+    responsibilities: [
+      "Architect microservices for banking API integrations",
+      "Design asynchronous payment processing workflows",
+      "Implement gRPC, GraphQL, Kafka, Redis for scalable infrastructure",
+      "Make critical technical decisions for transaction reliability",
+      "Optimize system performance for high-volume financial operations",
     ],
-    technologies: ["React", "Node.js", "AWS", "Docker", "Kubernetes", "PostgreSQL"]
+    impact:
+      "Built scalable payment infrastructure processing thousands of transactions daily, enabling seamless financial operations across India's banking ecosystem.",
+    technologies: ["Apache Kafka", "Redis", "gRPC", "GraphQL", "Microservices"],
   },
   {
-    company: "Digital Solutions Ltd.",
-    position: "Full Stack Developer",
-    location: "New York, NY",
-    period: "Jun 2020 - Dec 2021",
-    description: "Developed and maintained client-facing applications with focus on performance and user experience. Collaborated with design team to implement pixel-perfect interfaces.",
-    achievements: [
-      "Built RESTful APIs serving 500K+ users",
-      "Improved test coverage from 45% to 85%",
-      "Reduced bug reports by 30% through better testing",
-      "Implemented real-time features using WebSockets"
+    company: "Neokred",
+    position: "SDE 1",
+    location: "Bengaluru, Karnataka, India",
+    period: "Aug 2023 - Apr 2024",
+    type: "Full-time · On-site",
+    description:
+      "Built foundational systems for identity management, policy automation, and India's first digital consent platform.",
+    responsibilities: [
+      "Internal IAM Tool - Identity and access management system with policy engine",
+      "Policy Project - B2B employee insurance portal automating policy workflows",
+      "Blutic - India's first consent management platform for DPDP Act 2023",
+      "Full-stack development using MERN stack",
+      "MongoDB schema optimization for faster queries",
+      "Multi-platform support (Flutter, React Native, Web)",
+      "OpenTelemetry implementation for system observability",
     ],
-    technologies: ["Vue.js", "Express", "MongoDB", "Redis", "Socket.io"]
+    impact:
+      "Delivered compliance-ready solutions enabling secure data handling and automated policy management across multiple business verticals.",
+    technologies: [
+      "MERN Stack",
+      "Microservices",
+      "MongoDB",
+      "Flutter",
+      "OpenTelemetry",
+    ],
   },
-  {
-    company: "StartUp Ventures",
-    position: "Junior Developer",
-    location: "Austin, TX",
-    period: "Aug 2018 - May 2020",
-    description: "Started career building MVPs for various startups. Gained experience in rapid prototyping and working directly with clients to deliver solutions.",
-    achievements: [
-      "Delivered 10+ MVPs for startup clients",
-      "Learned full-stack development from senior mentors",
-      "Participated in 24-hour hackathons winning 2 prizes",
-      "Contributed to open-source projects"
-    ],
-    technologies: ["JavaScript", "React", "Python", "Django", "MySQL"]
-  }
-]
+];
 
 export function Experience() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  }
-
   return (
-    <section id="experience" className="py-12 md:py-16">
-      <motion.h2 
-        className="text-2xl md:text-3xl mb-6 md:mb-8 text-center md:text-left"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        Experience
-      </motion.h2>
-      
-      <motion.div 
-        className="space-y-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
+    <motion.section
+      id="experience"
+      className="py-12 md:py-16"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2 className="text-2xl md:text-3xl mb-2 text-center md:text-left">
+        Where I&apos;ve Worked
+      </h2>
+      {/* <p className="text-sm text-muted-foreground/70 mb-6 md:mb-8 text-center md:text-left">
+        Building products at scale in production
+      </p> */}
+
+      <div className="space-y-6">
         {experiences.map((exp, index) => (
-          <motion.div key={index} variants={itemVariants}>
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                  <div>
-                    <CardTitle className="text-xl">{exp.position}</CardTitle>
-                    <CardDescription className="text-base mt-1">
-                      <span>{exp.company}</span>
-                    </CardDescription>
-                  </div>
-                  <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{exp.period}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-4 w-4" />
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-                </div>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">{exp.description}</p>
-                
+          <Card
+            key={index}
+            className="hover:shadow-lg transition-shadow duration-300"
+          >
+            <CardHeader>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div>
-                  <h4 className="mb-2 flex items-center gap-2">
-                    <Briefcase className="h-4 w-4" />
-                    Key Achievements
-                  </h4>
-                  <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
-                    ))}
-                  </ul>
+                  <CardTitle className="text-xl">{exp.position}</CardTitle>
+                  <CardDescription className="text-base mt-1">
+                    {exp.company} · {exp.type}
+                  </CardDescription>
                 </div>
-                
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {exp.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary">
-                      {tech}
-                    </Badge>
+                <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>{exp.period}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MapPin className="h-4 w-4" />
+                    <span>{exp.location}</span>
+                  </div>
+                </div>
+              </div>
+            </CardHeader>
+
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground">{exp.description}</p>
+
+              <div>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  {exp.responsibilities.map((item, i) => (
+                    <li key={i}>→ {item}</li>
                   ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+                </ul>
+              </div>
+
+              <p className="text-sm text-muted-foreground">
+                <span className="font-medium">Impact:</span> {exp.impact}
+              </p>
+
+              <div className="flex flex-wrap gap-2 pt-2">
+                {exp.technologies.map((tech) => (
+                  <Badge key={tech} variant="secondary">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         ))}
-      </motion.div>
-    </section>
-  )
+      </div>
+    </motion.section>
+  );
 }

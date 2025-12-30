@@ -1,0 +1,89 @@
+[
+  {
+    "slug": "carepass",
+    "title": "CarePass",
+    "description": "End-to-end insurance platform with user onboarding, Razorpay integration, multi-user admin panel, and payment management.",
+    "longDescription": "Built a complete insurance platform from scratch - converted design to frontend, implemented entire backend functionality. Features include user onboarding flow, Razorpay payment gateway integration, multi-user system with admin-level payment management.",
+    "stack": ["Next.js", "Node.js", "PostgreSQL", "Razorpay", "Tailwind CSS"],
+    "demo": "https://www.carepass.in/",
+    "date": "2024",
+    "status": "completed",
+    "thumbnail": "/thumbnails/carepass.svg"
+  },
+  {
+    "slug": "cayiba",
+    "title": "Cayiba",
+    "description": "Backend and admin CMS for an African e-commerce platform - a growing marketplace with mobile apps.",
+    "longDescription": "Built the entire backend and admin CMS for this African e-commerce application. Self-hosted infrastructure with quality backup systems for product images, videos, and user data. App Store and Play Store launch in progress.",
+    "stack": ["Node.js", "PostgreSQL", "Redis", "Docker", "AWS S3"],
+    "date": "2024",
+    "status": "completed",
+    "thumbnail": "/thumbnails/cayiba.svg"
+  },
+  {
+    "slug": "the-hardline",
+    "title": "The Hardline",
+    "description": "Self-hosted Ghost CMS magazine for an online newspaper with multiple users and blogs.",
+    "longDescription": "Built end-to-end online magazine platform using self-hosted Ghost CMS. Actively maintained with robust backup systems, supports multiple users and multiple blogs for the newspaper's online version. Complete infrastructure management and deployment.",
+    "stack": ["Ghost CMS", "MySQL", "Nginx", "Docker", "Linux"],
+    "demo": "https://thehardline.in/",
+    "date": "2024",
+    "status": "completed",
+    "thumbnail": "/thumbnails/hardline.svg"
+  },
+  {
+    "slug": "yaavarum-landing",
+    "title": "Yaavarum Hospital",
+    "description": "AI-built landing page in 30 minutes - deployed free on Cloudflare Pages.",
+    "longDescription": "Entire website designed and developed using AI in under 30 minutes. Hero section to footer - all AI-assisted. Deployed on Cloudflare Pages for free with optimized CI/CD. Only cost: domain ($10/year).",
+    "stack": ["Next.js", "Tailwind CSS", "Cloudflare Pages", "AI-Assisted"],
+    "github": "https://github.com/sriramarumugham/yaavarum-landing",
+    "githubRepo": "sriramarumugham/yaavarum-landing",
+    "demo": "https://yaavarumhospital.com/",
+    "date": "2024",
+    "status": "completed",
+    "thumbnail": "/thumbnails/yaavarum.svg"
+  },
+  {
+    "slug": "nse-preopen-scraper",
+    "title": "NSE Pre-Open Data Scraper",
+    "description": "Automated market data scraper with open API - serverless infrastructure with zero operational costs.",
+    "longDescription": "Built an NSE scraper that downloads pre-open market data daily before market opens. Serverless architecture using GitHub Workflows and Cloudflare R2 storage. Includes a public API for anyone to access the archived data. Built to optimize investment decisions with data-driven insights.",
+    "stack": [
+      "Python",
+      "GitHub Actions",
+      "Cloudflare R2",
+      "Cloudflare Workers",
+      "REST API"
+    ],
+    "github": "https://github.com/sriramarumugham/nse-pre-open-data",
+    "githubRepo": "sriramarumugham/nse-pre-open-data",
+    "demo": "https://nse-pre-open-api.sreeram-amg.workers.dev",
+    "date": "2024",
+    "status": "completed",
+    "thumbnail": "/thumbnails/nse-scraper.svg"
+  },
+  {
+    "slug": "camerakadai",
+    "title": "Camera Kadai",
+    "description": "E-commerce platform for camera rentals built with Medusa.js headless commerce.",
+    "longDescription": "Building a complete camera rental e-commerce platform using Medusa.js. Full-featured rental shop with inventory management, booking system, and payment integration.",
+    "stack": ["Medusa.js", "Next.js", "PostgreSQL", "Razorpay"],
+    "github": "https://github.com/sriramarumugham/camera-kadai",
+    "githubRepo": "sriramarumugham/camera-kadai",
+    "demo": "https://camera-kadai.sreeram-amg.workers.dev/",
+    "date": "2024",
+    "status": "in-progress",
+    "thumbnail": "/thumbnails/camerakadai.svg"
+  },
+  {
+    "slug": "zerobook",
+    "title": "Zerobook",
+    "description": "Complete CMS solution for financial services with loan management and reporting.",
+    "longDescription": "End-to-end CMS designed for financial services. Features loan management, customer tracking, payment schedules, and reporting. Built with security and data integrity as top priorities.",
+    "stack": ["Next.js", "Node.js", "PostgreSQL", "Prisma"],
+    "date": "2024",
+    "status": "in-progress",
+    "thumbnail": "/thumbnails/zerobook.svg"
+  }
+]

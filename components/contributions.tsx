@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
@@ -7,7 +9,12 @@ export function Contributions() {
 
   return (
     <section id="contributions" className="py-12 md:py-16">
-      <h2 className="text-2xl md:text-3xl mb-6 md:mb-8 text-center md:text-left">Contributions</h2>
+      <h2 className="text-2xl md:text-3xl mb-6 md:mb-8 text-center md:text-left">
+        My Stats
+      </h2>
+      {/* <p className="text-sm text-muted-foreground/70 mb-6 md:mb-8 text-center md:text-left">
+        Staying sharp with daily practice
+      </p> */}
       <div className="grid gap-4 md:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -18,19 +25,11 @@ export function Contributions() {
           <CardContent>
             <div className="flex justify-center overflow-hidden">
               <Image
-                src={`https://streak-stats.demolab.com/?user=${githubUsername}&theme=dark&hide_border=true`}
+                src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=default&hide_border=true`}
                 alt="GitHub Streak Stats"
                 width={400}
                 height={200}
-                className="rounded-lg max-w-full w-auto h-auto dark:block hidden"
-                unoptimized
-              />
-              <Image
-                src={`https://streak-stats.demolab.com/?user=${githubUsername}&theme=default&hide_border=true`}
-                alt="GitHub Streak Stats"
-                width={400}
-                height={200}
-                className="rounded-lg max-w-full w-auto h-auto dark:hidden block"
+                className="rounded-lg max-w-full w-auto h-auto"
                 unoptimized
               />
             </div>
@@ -46,19 +45,11 @@ export function Contributions() {
           <CardContent>
             <div className="flex justify-center overflow-hidden">
               <Image
-                src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?theme=dark&font=Nunito&ext=contest`}
-                alt="LeetCode Stats"
-                width={400}
-                height={200}
-                className="rounded-lg max-w-full w-auto h-auto dark:block hidden"
-                unoptimized
-              />
-              <Image
                 src={`https://leetcard.jacoblin.cool/${leetcodeUsername}?theme=light&font=Nunito&ext=contest`}
                 alt="LeetCode Stats"
                 width={400}
                 height={200}
-                className="rounded-lg max-w-full w-auto h-auto dark:hidden block"
+                className="rounded-lg max-w-full w-auto h-auto"
                 unoptimized
               />
             </div>
@@ -74,19 +65,11 @@ export function Contributions() {
           <CardContent>
             <div className="flex justify-center overflow-hidden">
               <Image
-                src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=dark&hide_border=true&count_private=true`}
-                alt="GitHub Stats"
-                width={500}
-                height={200}
-                className="rounded-lg max-w-full w-auto h-auto dark:block hidden"
-                unoptimized
-              />
-              <Image
-                src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=light&hide_border=true&count_private=true`}
-                alt="GitHub Stats"
-                width={500}
-                height={200}
-                className="rounded-lg max-w-full w-auto h-auto dark:hidden block"
+                src={`https://ghchart.rshah.org/${githubUsername}`}
+                alt="GitHub Contribution Graph"
+                width={800}
+                height={120}
+                className="rounded-lg max-w-full w-auto h-auto"
                 unoptimized
               />
             </div>
