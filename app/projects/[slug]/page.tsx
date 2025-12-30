@@ -9,6 +9,7 @@ import { ProjectContent } from "@/components/project-content"
 import { Navbar } from "@/components/navbar"
 import { YouTubeEmbed } from "@/components/youtube-embed"
 import { GithubIcon } from "@/components/icons"
+import { getImagePath } from "@/lib/utils"
 import { projects, getProjectBySlug, fetchGitHubReadme } from "@/lib/projects"
 
 export async function generateStaticParams() {
@@ -45,7 +46,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="mb-8">
           <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden mb-6 bg-muted">
             <Image
-              src={project.thumbnail}
+              src={getImagePath(project.thumbnail)}
               alt={project.title}
               fill
               className="object-cover"

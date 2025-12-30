@@ -2,6 +2,7 @@
 
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
+import { getImagePath } from "@/lib/utils";
 import {
   Card,
   CardContent,
@@ -41,7 +42,7 @@ export function Projects() {
           >
             <div className="relative w-full h-40 overflow-hidden bg-muted">
               <Image
-                src={project.thumbnail}
+                src={getImagePath(project.thumbnail)}
                 alt={project.title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"

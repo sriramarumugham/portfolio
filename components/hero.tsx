@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from "@/components/icons";
+import { getImagePath } from "@/lib/utils";
 
 export function Hero() {
   return (
@@ -19,7 +20,7 @@ export function Hero() {
         <div className="flex-shrink-0 order-1 md:order-2 mt-8 md:mt-0">
           <div className="relative w-64 h-64 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/20">
             <Image
-              src="/avatar.png"
+              src={getImagePath("/avatar.png")}
               alt="Sreeram"
               width={256}
               height={256}
