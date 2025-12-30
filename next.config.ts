@@ -9,6 +9,13 @@ const nextConfig: NextConfig = {
   output: "export",
 
   /**
+   * Set base path for GitHub Pages deployment.
+   * The repo is served at https://sriramarumugham.github.io/portfolio/
+   */
+  basePath: "/portfolio",
+  assetPrefix: "/portfolio",
+
+  /**
    * Disable server-based image optimization. Next.js does not support
    * dynamic features with static exports.
    *
