@@ -71,7 +71,7 @@
     "stack": ["Medusa.js", "Next.js", "PostgreSQL", "Razorpay"],
     "github": "https://github.com/sriramarumugham/camera-kadai",
     "githubRepo": "sriramarumugham/camera-kadai",
-    "demo": "https://camera-kadai.sreeram-amg.workers.dev/",
+    "demo": "https://camerakadai.com/",
     "date": "2024",
     "status": "in-progress",
     "thumbnail": "/thumbnails/camerakadai.svg"
