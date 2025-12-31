@@ -1,10 +1,10 @@
-import { Hero } from "@/components/hero"
-import { Projects } from "@/components/projects"
-import { Skills } from "@/components/skills"
-import { Experience } from "@/components/experience"
-import { Contact } from "@/components/contact"
-import { Contributions } from "@/components/contributions"
-import { Navbar } from "@/components/navbar"
+import { Hero } from "@/components/hero";
+import { Projects } from "@/components/projects";
+import { Skills } from "@/components/skills";
+import { Experience } from "@/components/experience";
+import { Contact } from "@/components/contact";
+import { Contributions } from "@/components/contributions";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   return (
@@ -19,5 +19,5 @@ export default function Home() {
         <Contact />
       </div>
     </main>
-  )
+  );
 }
