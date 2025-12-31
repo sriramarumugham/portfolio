@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +13,8 @@ import {
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -28,9 +31,16 @@ export function Navbar() {
   ) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+
+    // Check if we're on the home page
+    if (pathname === "/") {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home page with hash
+      router.push(`/${href}`);
     }
     setIsOpen(false);
   };
