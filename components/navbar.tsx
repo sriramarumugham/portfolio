@@ -19,7 +19,7 @@ export function Navbar() {
     { href: "/#projects", label: "Projects" },
     { href: "/#skills", label: "Skills" },
     { href: "/#experience", label: "Experience" },
-    { href: "/#contributions", label: "Contributions" },
+    { href: "/#contributions", label: "Stats" },
     { href: "/#contact", label: "Contact" },
   ];
 
